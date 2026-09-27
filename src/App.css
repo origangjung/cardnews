@@ -59,7 +59,7 @@
 .timeline {
   z-index: 5;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   background: #ffffff;
   border-bottom: 1px solid #d9e0e8;
 }
@@ -294,6 +294,13 @@
   word-break: keep-all;
 }
 
+.activity-card__program .program-application {
+  padding-top: 10px;
+  border-top: 1px solid #d8e3eb;
+  color: #172230;
+  font-weight: 700;
+}
+
 .program-link {
   width: fit-content;
   margin-top: 8px;
@@ -321,6 +328,14 @@
   min-height: 0;
   object-fit: cover;
   display: block;
+}
+
+.program-photo--poster {
+  background: #ffffff;
+}
+
+.program-photo--poster img {
+  object-fit: contain;
 }
 
 .program-photo figcaption {
@@ -368,7 +383,7 @@
   height: 36px;
   width: 42px;
   color: #ffffff;
-  background: currentColor;
+  background: var(--theme);
   font-size: 13px;
   line-height: 1;
   font-weight: 900;
@@ -464,7 +479,7 @@
   }
 
   .timeline {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .timeline button {
@@ -564,5 +579,12 @@
   .image-page img {
     height: 100%;
     max-height: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline button {
+    flex-direction: column;
+    gap: 3px;
   }
 }

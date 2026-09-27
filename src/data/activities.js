@@ -1,6 +1,7 @@
 import aprilImage from '../assets/cardnews/april.jpg'
 import juneImage from '../assets/cardnews/june.jpg'
 import mayImage from '../assets/cardnews/may.png'
+import groupImage from '../assets/cardnews/group.png'
 
 export const activities = [
   {
@@ -102,5 +103,40 @@ export const activities = [
     quote:
       'AI를 도구로 쓰는 수준을 넘어 새로운 서비스와 시스템을 직접 설계하는 역량이 미래의 핵심임을 실감했다.',
     palette: 'coral',
+  },
+  {
+    month: '09',
+    label: '9월 활동',
+    date: '2026.09',
+    title: '스마트SW학과 그룹멘토링 활동 준비',
+    newsTitle: '선후배가 함께 배우는 그룹멘토링, 9월 학습 계획을 세웠다',
+    programName: '2026학년도 2학기 스마트SW학과 그룹멘토링',
+    kicker: '토익 학습을 중심으로 한 선후배 협동학습',
+    applicationGuide: '뉴칼라인재양성 시스템 접속 → 비교과 프로그램 → 학과 선택',
+    photo: {
+      src: groupImage,
+      alt: '2026학년도 2학기 스마트SW학과 그룹멘토링 프로그램 안내 포스터',
+      caption: '스마트SW학과 그룹멘토링 안내 포스터',
+      type: 'poster',
+    },
+    summary:
+      '9월에는 스마트SW학과 그룹멘토링 참여를 위해 프로그램 운영 방식을 확인하고, 팀원과 함께 실천할 토익 학습 계획을 준비했다. 선후배가 서로 설명하고 배움을 나누며 꾸준히 성장하는 활동을 목표로 한다.',
+    points: [
+      {
+        title: '함께하는 학습',
+        body: '멘토 1명과 멘티 3~6명이 팀을 이루어 학기 중 주 4시간씩 협동학습을 진행하는 프로그램이다.',
+      },
+      {
+        title: '영역별 토익 학습 계획',
+        body: '각자의 목표와 부족한 영역을 살펴 단어·문법·LC·RC를 나누어 공부하고, 틀린 문제의 원인을 서로 설명할 계획이다.',
+      },
+      {
+        title: '기록하며 성장하기',
+        body: '매주 학습 내용과 진행 상황을 기록하고, 모의 토익으로 변화를 확인해 다음 학습 계획에 반영할 예정이다.',
+      },
+    ],
+    quote:
+      '함께 목표를 세우고 꾸준히 실천하며, 서로의 배움을 더해 갑니다.',
+    palette: 'blue',
   },
 ]

@@ -12,9 +12,9 @@ function ActivityPoint({ point, index }) {
 
 function ProgramPhoto({ photo, month }) {
   return (
-    <figure className="program-photo">
+    <figure className={`program-photo${photo.type === 'poster' ? ' program-photo--poster' : ''}`}>
       <img src={photo.src} alt={photo.alt} />
-      <figcaption>{month}월 프로그램 현장 이미지</figcaption>
+      <figcaption>{photo.caption ?? `${month}월 프로그램 현장 이미지`}</figcaption>
     </figure>
   )
 }
@@ -49,6 +49,9 @@ export function ActivityCard({ activity }) {
         <span>PROGRAM</span>
         <strong>{activity.programName}</strong>
         <p>{activity.kicker}</p>
+        {activity.applicationGuide && (
+          <p className="program-application">신청 방법: {activity.applicationGuide}</p>
+        )}
         <LinkButton link={activity.link} />
       </aside>
 
