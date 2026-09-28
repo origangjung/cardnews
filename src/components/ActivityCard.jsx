@@ -13,7 +13,7 @@ function ActivityPoint({ point, index }) {
 function ProgramPhoto({ photo, month }) {
   return (
     <figure className={`program-photo${photo.type === 'poster' ? ' program-photo--poster' : ''}`}>
-      <img src={photo.src} alt={photo.alt} />
+      <img src={photo.src} alt={photo.alt} decoding="async" />
       <figcaption>{photo.caption ?? `${month}월 프로그램 현장 이미지`}</figcaption>
     </figure>
   )

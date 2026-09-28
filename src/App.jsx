@@ -7,6 +7,7 @@ import { PageControls } from './components/PageControls'
 import { PageViewer } from './components/PageViewer'
 import { TimelineNav } from './components/TimelineNav'
 import { activities } from './data/activities'
+import { coverImage, closingImage } from './data/cardImages'
 
 function App() {
   const [currentPage, setCurrentPage] = useState(0)
@@ -14,12 +15,13 @@ function App() {
 
   const pages = useMemo(
     () => [
-      { id: 'cover', content: <HeroCover />, fullscreen: true },
+      { id: 'cover', image: coverImage, content: <HeroCover />, fullscreen: true },
       ...activities.map((activity) => ({
         id: activity.month,
+        image: activity.photo.src,
         content: <ActivityCard activity={activity} />,
       })),
-      { id: 'closing', content: <ClosingPage />, fullscreen: true },
+      { id: 'closing', image: closingImage, content: <ClosingPage />, fullscreen: true },
     ],
     [],
   )

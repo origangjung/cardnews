@@ -199,7 +199,6 @@ button:focus-visible,
   padding: clamp(12px, 2.5vh, 28px) clamp(12px, 3vw, 40px);
   display: grid;
   place-items: center;
-  perspective: 1800px;
   overflow: hidden;
 }
 
@@ -223,11 +222,9 @@ button:focus-visible,
   box-shadow: 0 12px 40px #20344d0a, 0 2px 6px #20344d04;
   scrollbar-width: thin;
   scrollbar-color: #c9d8e3 transparent;
-  transform-origin: left center;
-  animation-duration: 420ms;
-  animation-timing-function: cubic-bezier(0.18, 0.72, 0.16, 1);
-  animation-fill-mode: both;
-  will-change: transform, opacity;
+  animation-duration: 200ms;
+  animation-timing-function: cubic-bezier(0.22, 0.8, 0.3, 1);
+  animation-fill-mode: backwards;
 }
 
 .newspaper-page--fullscreen {
@@ -250,7 +247,6 @@ button:focus-visible,
 }
 
 .newspaper-page.flip-prev {
-  transform-origin: right center;
   animation-name: pageFlipPrev;
 }
 
@@ -615,35 +611,33 @@ button:focus-visible,
 
 @keyframes pageFlipNext {
   0% {
-    opacity: 0;
-    transform: translateX(24px);
+    opacity: 0.55;
+    transform: translateX(28px) scale(0.985);
   }
 
-  54% {
+  65% {
     opacity: 1;
-    transform: translateX(-2px);
   }
 
   100% {
     opacity: 1;
-    transform: rotateY(0deg) translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
 
 @keyframes pageFlipPrev {
   0% {
-    opacity: 0;
-    transform: translateX(-24px);
+    opacity: 0.55;
+    transform: translateX(-28px) scale(0.985);
   }
 
-  54% {
+  65% {
     opacity: 1;
-    transform: translateX(2px);
   }
 
   100% {
     opacity: 1;
-    transform: rotateY(0deg) translateX(0);
+    transform: translateX(0) scale(1);
   }
 }
 

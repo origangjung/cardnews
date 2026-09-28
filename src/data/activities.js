@@ -1,7 +1,7 @@
-import aprilImage from '../assets/cardnews/april.jpg'
-import juneImage from '../assets/cardnews/june.jpg'
-import mayImage from '../assets/cardnews/may.png'
-import groupImage from '../assets/cardnews/group.png'
+import aprilImage from '../assets/cardnews/april.webp'
+import juneImage from '../assets/cardnews/june.webp'
+import mayImage from '../assets/cardnews/may.webp'
+import groupImage from '../assets/cardnews/group.webp'
 
 export const activities = [
   {
