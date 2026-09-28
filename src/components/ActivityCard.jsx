@@ -46,7 +46,7 @@ export function ActivityCard({ activity }) {
       </div>
 
       <aside className="activity-card__program">
-        <span>PROGRAM</span>
+        <span>프로그램 소개</span>
         <strong>{activity.programName}</strong>
         <p>{activity.kicker}</p>
         {activity.applicationGuide && (

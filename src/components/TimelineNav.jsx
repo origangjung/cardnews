@@ -6,6 +6,7 @@ export function TimelineNav({ items, currentPage, onSelect }) {
           className={currentPage === item.page ? 'is-active' : ''}
           key={item.month}
           type="button"
+          aria-current={currentPage === item.page ? 'page' : undefined}
           onClick={() => onSelect(item.page)}
         >
           <span>{item.month}</span>
