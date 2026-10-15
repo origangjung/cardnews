@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 .reader-brand {
@@ -138,7 +139,7 @@ button:focus-visible,
 
 .timeline {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 4px;
   padding: 5px;
   border-radius: 16px;
@@ -609,6 +610,74 @@ button:focus-visible,
   --theme: #ba6954;
 }
 
+.activity-card--posters {
+  max-width: 1040px;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'header'
+    'program'
+    'gallery'
+    'summary'
+    'points'
+    'quote';
+}
+
+.activity-card--posters .activity-card__header {
+  align-items: start;
+}
+
+.poster-gallery {
+  grid-area: gallery;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.poster-gallery__item {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #e7edf3;
+  border-radius: 18px;
+  background: #fafbfd;
+}
+
+.poster-gallery__image {
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: 16px;
+  background: #f3f6f9;
+}
+
+.poster-gallery__image img {
+  display: block;
+  width: 100%;
+  height: 580px;
+  object-fit: contain;
+}
+
+.poster-gallery figcaption {
+  padding: 20px;
+  color: #415269;
+}
+
+.poster-gallery figcaption strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #253a52;
+  font-size: 18px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.poster-gallery figcaption p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
 @keyframes pageFlipNext {
   0% {
     opacity: 0.55;
@@ -677,7 +746,7 @@ button:focus-visible,
   }
 
   .timeline {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .timeline button {
@@ -776,6 +845,20 @@ button:focus-visible,
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .activity-card--posters {
+    grid-template-areas:
+      'header'
+      'program'
+      'gallery'
+      'summary'
+      'points'
+      'quote';
+  }
+
+  .poster-gallery__image img {
+    height: min(60vw, 500px);
+  }
+
   .point__number {
     width: 42px;
   }
@@ -788,9 +871,11 @@ button:focus-visible,
 
 @media (max-width: 480px) {
   .timeline button {
-    gap: 5px;
-    padding: 6px 4px;
-    font-size: 11px;
+    flex-direction: column;
+    min-height: 54px;
+    gap: 3px;
+    padding: 5px 2px;
+    font-size: 10px;
   }
 
   .timeline span {
@@ -800,6 +885,16 @@ button:focus-visible,
 
   .activity-card {
     row-gap: 18px;
+  }
+
+  .poster-gallery {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .poster-gallery__image img {
+    height: auto;
+    max-height: none;
   }
 
   .activity-card__program {

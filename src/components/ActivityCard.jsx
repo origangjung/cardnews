@@ -19,6 +19,24 @@ function ProgramPhoto({ photo, month }) {
   )
 }
 
+function PosterGallery({ posters }) {
+  return (
+    <div className="poster-gallery" aria-label="10월 공모전 포스터">
+      {posters.map((poster) => (
+        <figure className="poster-gallery__item" key={poster.title}>
+          <div className="poster-gallery__image">
+            <img src={poster.src} alt={poster.alt} decoding="async" />
+          </div>
+          <figcaption>
+            <strong>{poster.title}</strong>
+            <p>{poster.description}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  )
+}
+
 function LinkButton({ link }) {
   if (!link) {
     return null
@@ -34,7 +52,7 @@ function LinkButton({ link }) {
 export function ActivityCard({ activity }) {
   return (
     <article
-      className={`activity-card activity-card--${activity.palette}`}
+      className={`activity-card activity-card--${activity.palette}${activity.posters ? ' activity-card--posters' : ''}`}
       id={`month-${activity.month}`}
     >
       <div className="activity-card__header">
@@ -55,7 +73,9 @@ export function ActivityCard({ activity }) {
         <LinkButton link={activity.link} />
       </aside>
 
-      <ProgramPhoto photo={activity.photo} month={activity.month} />
+      {!activity.posters && <ProgramPhoto photo={activity.photo} month={activity.month} />}
+
+      {activity.posters && <PosterGallery posters={activity.posters} />}
 
       <p className="activity-card__summary">{activity.summary}</p>
 

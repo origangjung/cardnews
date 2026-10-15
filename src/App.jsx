@@ -18,7 +18,7 @@ function App() {
       { id: 'cover', image: coverImage, content: <HeroCover />, fullscreen: true },
       ...activities.map((activity) => ({
         id: activity.month,
-        image: activity.photo.src,
+        images: activity.posters?.map((poster) => poster.src) ?? [activity.photo.src],
         content: <ActivityCard activity={activity} />,
       })),
       { id: 'closing', image: closingImage, content: <ClosingPage />, fullscreen: true },

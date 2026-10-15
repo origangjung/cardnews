@@ -7,16 +7,17 @@ export function PageViewer({ pages, currentPage, direction }) {
   useEffect(() => {
     // Decode adjacent pages in advance without delaying navigation.
     for (const index of [currentPage + 1, currentPage - 1]) {
-      const src = pages[index]?.image
-      if (!src || cachedImages.current.has(src)) continue
+      for (const src of pages[index]?.images ?? (pages[index]?.image ? [pages[index].image] : [])) {
+        if (cachedImages.current.has(src)) continue
 
-      const image = new Image()
-      image.decoding = 'async'
-      image.src = src
-      cachedImages.current.set(src, image)
-      image.decode().catch(() => {
-        cachedImages.current.delete(src)
-      })
+        const image = new Image()
+        image.decoding = 'async'
+        image.src = src
+        cachedImages.current.set(src, image)
+        image.decode().catch(() => {
+          cachedImages.current.delete(src)
+        })
+      }
     }
   }, [currentPage, pages])
 
